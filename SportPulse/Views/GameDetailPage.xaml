@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportPulse.Views.GameDetailPage"
+             BackgroundColor="#2B2B2B">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        
+        <!-- Back Button -->
+        <Button Text="← Zurück"
+                BackgroundColor="#B8121C"
+                TextColor="White"
+                Clicked="OnBackClicked"
+                HorizontalOptions="Start"/>
+
+        <!-- Header -->
+        <Label Text="Spieldetails" 
+               TextColor="White" 
+               FontSize="28" 
+               FontAttributes="Bold"/>
+
+        <!-- Placeholder -->
+        <Label Text="🏆 Spieldetails werden hier angezeigt" 
+               TextColor="#999999" 
+               FontSize="16"
+               Margin="0,40,0,0"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

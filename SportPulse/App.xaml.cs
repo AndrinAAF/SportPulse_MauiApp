@@ -1,14 +1,11 @@
-﻿namespace SportPulse;
-
-public partial class App : Application
+﻿namespace SportPulse
 {
-    public App()
+    public partial class App : Application
     {
-        InitializeComponent();
-    }
-
-    protected override Window CreateWindow(IActivationState? activationState)
-    {
-        return new Window(new AppShell());
+        public App()
+        {
+            InitializeComponent();
+            MainPage = new AppShell();
+        }
     }
 }

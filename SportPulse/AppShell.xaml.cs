@@ -1,9 +1,15 @@
-﻿namespace SportPulse;
+﻿using SportPulse.Views;
 
-public partial class AppShell : Shell
+namespace SportPulse
 {
-    public AppShell()
+    public partial class AppShell : Shell
     {
-        InitializeComponent();
+        public AppShell()
+        {
+            InitializeComponent();
+            
+            // Register detail page route
+            Routing.RegisterRoute("gamedetail", typeof(GameDetailPage));
+        }
     }
 }
