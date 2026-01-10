@@ -25,6 +25,203 @@
             </StackLayout>
         </Grid>
 
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="ContentLayout" Padding="16" Spacing="16">
+
+                <!-- Login/Register Form (shown when not logged in) -->
+                <VerticalStackLayout x:Name="LoginForm" Spacing="16" IsVisible="True">
+                    
+                    <Label Text="Profil &amp; Einstellungen" 
+                           TextColor="White" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           Margin="0,8,0,16"/>
+
+                    <!-- Name Field -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Name *" TextColor="#CCCCCC" FontSize="14"/>
+                        <Entry x:Name="NameEntry" 
+                               Placeholder="Dein Name" 
+                               PlaceholderColor="#666666"
+                               TextColor="White" 
+                               BackgroundColor="#3B3B3B"
+                               HeightRequest="50"
+                               TextChanged="OnNameChanged"/>
+                        <Label x:Name="NameError" 
+                               Text="Name ist erforderlich" 
+                               TextColor="#FF3B30" 
+                               FontSize="12" 
+                               IsVisible="False"/>
+                    </VerticalStackLayout>
+
+                    <!-- Email Field -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Email *" TextColor="#CCCCCC" FontSize="14"/>
+                        <Entry x:Name="EmailEntry" 
+                               Placeholder="deine@email.com" 
+                               PlaceholderColor="#666666"
+                               TextColor="White" 
+                               BackgroundColor="#3B3B3B"
+                               Keyboard="Email"
+                               HeightRequest="50"
+                               TextChanged="OnEmailChanged"/>
+                        <Label x:Name="EmailError" 
+                               Text="Gültige Email-Adresse ist erforderlich" 
+                               TextColor="#FF3B30" 
+                               FontSize="12" 
+                               IsVisible="False"/>
+                    </VerticalStackLayout>
+
+                    <!-- Favorite Sport Field -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Bevorzugte Sportart *" TextColor="#CCCCCC" FontSize="14"/>
+                        <Picker x:Name="SportPicker" 
+                                Title="Sportart auswählen"
+                                TitleColor="#666666"
+                                TextColor="White" 
+                                BackgroundColor="#3B3B3B"
+                                HeightRequest="50"
+                                SelectedIndexChanged="OnSportChanged">
+                            <Picker.Items>
+                                <x:String>Fussball</x:String>
+                                <x:String>Basketball</x:String>
+                                <x:String>Tennis</x:String>
+                                <x:String>Formel 1</x:String>
+                                <x:String>WEC</x:String>
+                                <x:String>Volleyball</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label x:Name="SportError" 
+                               Text="Bitte wähle eine Sportart aus" 
+                               TextColor="#FF3B30" 
+                               FontSize="12" 
+                               IsVisible="False"/>
+                    </VerticalStackLayout>
+
+                    <!-- Push Notifications Toggle -->
+                    <Frame BackgroundColor="#3B3B3B" 
+                           CornerRadius="8" 
+                           Padding="16"
+                           HasShadow="False"
+                           Margin="0,8,0,0">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Push-Benachrichtigungen" 
+                                   TextColor="White" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center"/>
+                            <Switch x:Name="NotificationSwitch" 
+                                    OnColor="#880A21" 
+                                    ThumbColor="White"
+                                    Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+                    
+                    <Label Text="Erhalte Live-Updates der ausgewählten Spiele" 
+                           TextColor="#999999" 
+                           FontSize="12"
+                           Margin="0,-8,0,0"/>
+
+                    <!-- Save Button -->
+                    <Button x:Name="SaveButton"
+                            Text="Profil speichern" 
+                            BackgroundColor="#880A21" 
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="50"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            Margin="0,8,0,0"
+                            Clicked="OnSaveClicked"/>
+
+                    <!-- Password Reset Link -->
+                    <Label Text="• Passwörter müssen sorgfältig verwaltet werden" 
+                           TextColor="#999999" 
+                           FontSize="12"
+                           HorizontalOptions="Start"
+                           Margin="0,16,0,0"/>
+
+                </VerticalStackLayout>
+
+                <!-- Profile View (shown when logged in) -->
+                <VerticalStackLayout x:Name="ProfileView" Spacing="16" IsVisible="False">
+                    
+                    <Label Text="Profil" 
+                           TextColor="White" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           Margin="0,8,0,16"/>
+
+                    <!-- Profile Info Card -->
+                    <Frame BackgroundColor="#3B3B3B" 
+                           CornerRadius="8" 
+                           Padding="16"
+                           HasShadow="False">
+                        <VerticalStackLayout Spacing="12">
+                            <HorizontalStackLayout Spacing="8">
+                                <Label Text="👤" FontSize="24"/>
+                                <VerticalStackLayout Spacing="4">
+                                    <Label x:Name="ProfileName" 
+                                           Text="Name" 
+                                           TextColor="White" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold"/>
+                                    <Label x:Name="ProfileEmail" 
+                                           Text="email@example.com" 
+                                           TextColor="#CCCCCC" 
+                                           FontSize="14"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            
+                            <BoxView HeightRequest="1" Color="#555555"/>
+                            
+                            <HorizontalStackLayout Spacing="8">
+                                <Label Text="⚽" FontSize="20"/>
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="Lieblingssportart" 
+                                           TextColor="#999999" 
+                                           FontSize="12"/>
+                                    <Label x:Name="ProfileSport" 
+                                           Text="Fussball" 
+                                           TextColor="White" 
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Push Notifications Toggle -->
+                    <Frame BackgroundColor="#3B3B3B" 
+                           CornerRadius="8" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Push-Benachrichtigungen" 
+                                   TextColor="White" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center"/>
+                            <Switch x:Name="ProfileNotificationSwitch" 
+                                    OnColor="#880A21" 
+                                    ThumbColor="White"
+                                    Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Logout Button -->
+                    <Button Text="Abmelden" 
+                            BackgroundColor="#FF3B30" 
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="50"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            Margin="0,16,0,0"
+                            Clicked="OnLogoutClicked"/>
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
 
     </Grid>
 
