@@ -40,12 +40,28 @@ public partial class StatsPage : ContentPage
         LoadF1Table();
     }
 
+    private void OnAtpClicked(object sender, EventArgs e)
+    {
+        _currentSport = "ATP";
+        UpdateButtonStyles();
+        LoadAtpTable();
+    }
+
+    private void OnWecClicked(object sender, EventArgs e)
+    {
+        _currentSport = "WEC";
+        UpdateButtonStyles();
+        LoadWecTable();
+    }
+
     private void UpdateButtonStyles()
     {
         BundesligaBtn.BackgroundColor = _currentSport == "Bundesliga" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
         NbaBtn.BackgroundColor = _currentSport == "NBA" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
         TopLigaBtn.BackgroundColor = _currentSport == "TopLiga" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
         F1Btn.BackgroundColor = _currentSport == "F1" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
+        AtpBtn.BackgroundColor = _currentSport == "ATP" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
+        WecBtn.BackgroundColor = _currentSport == "WEC" ? Color.FromArgb("#880A21") : Color.FromArgb("#3B3B3B");
     }
 
     private void LoadBundesligaTable()
@@ -140,7 +156,59 @@ public partial class StatsPage : ContentPage
         }
     }
 
-    private Frame CreateTeamRow(TeamStats team, bool isBasketball = false, bool isF1 = false)
+    private void LoadAtpTable()
+    {
+        LeagueTitleLabel.Text = "🎾 ATP World Ranking";
+        TeamHeaderLabel.Text = "Spieler";
+        GoalsHeaderLabel.Text = "Punkte";
+        
+        TableContent.Children.Clear();
+
+        var players = new List<TeamStats>
+        {
+            new TeamStats { Position = 1, Name = "Novak Djokovic", Matches = 52, Wins = 45, Draws = 0, Losses = 7, GoalsFor = 8795, GoalsAgainst = 0 },
+            new TeamStats { Position = 2, Name = "Carlos Alcaraz", Matches = 56, Wins = 48, Draws = 0, Losses = 8, GoalsFor = 7675, GoalsAgainst = 0 },
+            new TeamStats { Position = 3, Name = "Daniil Medvedev", Matches = 60, Wins = 46, Draws = 0, Losses = 14, GoalsFor = 6145, GoalsAgainst = 0 },
+            new TeamStats { Position = 4, Name = "Jannik Sinner", Matches = 58, Wins = 44, Draws = 0, Losses = 14, GoalsFor = 5950, GoalsAgainst = 0 },
+            new TeamStats { Position = 5, Name = "Andrey Rublev", Matches = 62, Wins = 45, Draws = 0, Losses = 17, GoalsFor = 5010, GoalsAgainst = 0 },
+            new TeamStats { Position = 6, Name = "Holger Rune", Matches = 55, Wins = 40, Draws = 0, Losses = 15, GoalsFor = 4695, GoalsAgainst = 0 },
+            new TeamStats { Position = 7, Name = "Stefanos Tsitsipas", Matches = 58, Wins = 41, Draws = 0, Losses = 17, GoalsFor = 4385, GoalsAgainst = 0 },
+            new TeamStats { Position = 8, Name = "Casper Ruud", Matches = 60, Wins = 42, Draws = 0, Losses = 18, GoalsFor = 4125, GoalsAgainst = 0 },
+        };
+
+        foreach (var player in players)
+        {
+            TableContent.Children.Add(CreateTeamRow(player, isAtp: true));
+        }
+    }
+
+    private void LoadWecTable()
+    {
+        LeagueTitleLabel.Text = "🏁 WEC Drivers Championship";
+        TeamHeaderLabel.Text = "Fahrer";
+        GoalsHeaderLabel.Text = "Punkte";
+        
+        TableContent.Children.Clear();
+
+        var drivers = new List<TeamStats>
+        {
+            new TeamStats { Position = 1, Name = "#8 S. Buemi / B. Hartley", Matches = 6, Wins = 3, Draws = 0, Losses = 3, GoalsFor = 152, GoalsAgainst = 0 },
+            new TeamStats { Position = 2, Name = "#7 M. Conway / K. Kobayashi", Matches = 6, Wins = 2, Draws = 0, Losses = 4, GoalsFor = 138, GoalsAgainst = 0 },
+            new TeamStats { Position = 3, Name = "#51 A. Giovinazzi / J. Calado", Matches = 6, Wins = 1, Draws = 0, Losses = 5, GoalsFor = 125, GoalsAgainst = 0 },
+            new TeamStats { Position = 4, Name = "#50 A. Fuoco / N. Nielsen", Matches = 6, Wins = 0, Draws = 0, Losses = 6, GoalsFor = 108, GoalsAgainst = 0 },
+            new TeamStats { Position = 5, Name = "#2 R. Frijns / R. Rast", Matches = 6, Wins = 0, Draws = 0, Losses = 6, GoalsFor = 94, GoalsAgainst = 0 },
+            new TeamStats { Position = 6, Name = "#94 P. Wehrlein / S. Vandorne", Matches = 6, Wins = 0, Draws = 0, Losses = 6, GoalsFor = 82, GoalsAgainst = 0 },
+            new TeamStats { Position = 7, Name = "#36 D. Heinemeier-Hansson", Matches = 6, Wins = 0, Draws = 0, Losses = 6, GoalsFor = 75, GoalsAgainst = 0 },
+            new TeamStats { Position = 8, Name = "#63 A. Lynn / R. Ineichen", Matches = 6, Wins = 0, Draws = 0, Losses = 6, GoalsFor = 68, GoalsAgainst = 0 },
+        };
+
+        foreach (var driver in drivers)
+        {
+            TableContent.Children.Add(CreateTeamRow(driver, isWec: true));
+        }
+    }
+
+    private Frame CreateTeamRow(TeamStats team, bool isBasketball = false, bool isF1 = false, bool isAtp = false, bool isWec = false)
     {
         var frame = new Frame
         {
@@ -174,7 +242,7 @@ public partial class StatsPage : ContentPage
         grid.Add(new Label { Text = team.Losses.ToString(), TextColor = Colors.White, FontSize = 14, HorizontalTextAlignment = TextAlignment.Center, VerticalOptions = LayoutOptions.Center }, 5);
         
         string goalsText;
-        if (isF1)
+        if (isF1 || isAtp || isWec)
         {
             goalsText = $"{team.GoalsFor} Pkt";
         }

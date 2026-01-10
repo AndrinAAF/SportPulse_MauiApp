@@ -30,40 +30,58 @@
             <StackLayout Padding="16" Spacing="16">
                 
                 <!-- Sport Selection Tabs -->
-                <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
-                    <Button x:Name="BundesligaBtn" 
-                            Text="Bundesliga" 
-                            BackgroundColor="#880A21" 
-                            TextColor="White"
-                            CornerRadius="6"
-                            HeightRequest="40"
-                            Clicked="OnBundesligaClicked"
-                            Grid.Column="0"/>
-                    <Button x:Name="NbaBtn" 
-                            Text="NBA" 
-                            BackgroundColor="#3B3B3B" 
-                            TextColor="White"
-                            CornerRadius="6"
-                            HeightRequest="40"
-                            Clicked="OnNbaClicked"
-                            Grid.Column="1"/>
-                    <Button x:Name="TopLigaBtn" 
-                            Text="TopLiga" 
-                            BackgroundColor="#3B3B3B" 
-                            TextColor="White"
-                            CornerRadius="6"
-                            HeightRequest="40"
-                            Clicked="OnTopLigaClicked"
-                            Grid.Column="2"/>
-                    <Button x:Name="F1Btn" 
-                            Text="F1" 
-                            BackgroundColor="#3B3B3B" 
-                            TextColor="White"
-                            CornerRadius="6"
-                            HeightRequest="40"
-                            Clicked="OnF1Clicked"
-                            Grid.Column="3"/>
-                </Grid>
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <HorizontalStackLayout Spacing="8">
+                        <Button x:Name="BundesligaBtn"
+                                Text="Bundesliga"
+                                BackgroundColor="#880A21"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnBundesligaClicked"
+                                FontSize="14"/>
+                        <Button x:Name="NbaBtn"
+                                Text="NBA"
+                                BackgroundColor="#3B3B3B"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnNbaClicked"
+                                FontSize="14"/>
+                        <Button x:Name="TopLigaBtn"
+                                Text="TopLiga"
+                                BackgroundColor="#3B3B3B"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnTopLigaClicked"
+                                FontSize="14"/>
+                        <Button x:Name="F1Btn"
+                                Text="F1"
+                                BackgroundColor="#3B3B3B"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnF1Clicked"
+                                FontSize="14"/>
+                        <Button x:Name="AtpBtn"
+                                Text="ATP"
+                                BackgroundColor="#3B3B3B"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnAtpClicked"
+                                FontSize="14"/>
+                        <Button x:Name="WecBtn"
+                                Text="WEC"
+                                BackgroundColor="#3B3B3B"
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnWecClicked"
+                                FontSize="14"/>
+                    </HorizontalStackLayout>
+                </ScrollView>
 
                 <!-- League Title -->
                 <Frame BackgroundColor="#880A21" 
