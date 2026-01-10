@@ -17,8 +17,6 @@
             <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1">
                 <Label Text="Live Scores" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
                 <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
-                    <BoxView Color="#ff3b30" WidthRequest="8" HeightRequest="8" CornerRadius="4" VerticalOptions="Center" />
-                    <Label Text="Live-Updates aktiv" TextColor="#ffdede" FontSize="12" VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
         </Grid>

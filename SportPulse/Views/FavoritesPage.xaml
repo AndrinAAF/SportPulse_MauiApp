@@ -4,20 +4,24 @@
              x:Class="SportPulse.Views.FavoritesPage"
              BackgroundColor="#2B2B2B">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*">
+
+        <!-- Header / AppBar -->
+        <Grid BackgroundColor="#8B1C23" Padding="12,18" ColumnDefinitions="Auto, *" Row="0">
+            <!-- App icon placeholder -->
+            <Frame Padding="6" HeightRequest="32" WidthRequest="32" BackgroundColor="#ffffff22" CornerRadius="6" VerticalOptions="Center" HasShadow="False">
+                <Label Text="SP" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" />
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1">
+                <Label Text="Favoriten" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
+                <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
         
-        <!-- Header -->
-        <Label Text="Meine Favoriten" 
-               TextColor="White" 
-               FontSize="28" 
-               FontAttributes="Bold"/>
 
-        <!-- Placeholder -->
-        <Label Text="⭐ Deine Favoriten werden hier angezeigt" 
-               TextColor="#999999" 
-               FontSize="16"
-               Margin="0,40,0,0"/>
-
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>
