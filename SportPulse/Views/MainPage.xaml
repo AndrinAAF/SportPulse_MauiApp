@@ -2,22 +2,109 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportPulse.Views.MainPage"
-             BackgroundColor="#2B2B2B">
+             BackgroundColor="#2B2B2B"
+             Padding="0">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
-        
-        <!-- Header -->
-        <Label Text="Live Scores" 
-               TextColor="White" 
-               FontSize="28" 
-               FontAttributes="Bold"/>
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*">
 
-        <!-- Placeholder -->
-        <Label Text="📺 Live-Spiele werden hier angezeigt" 
-               TextColor="#999999" 
-               FontSize="16"
-               Margin="0,40,0,0"/>
+        <!-- Header / AppBar -->
+        <Grid BackgroundColor="#8B1C23" Padding="12,18" ColumnDefinitions="Auto, *" Row="0">
+            <!-- App icon placeholder -->
+            <Frame Padding="6" HeightRequest="32" WidthRequest="32" BackgroundColor="#ffffff22" CornerRadius="6" VerticalOptions="Center" HasShadow="False">
+                <Label Text="SP" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" />
+            </Frame>
 
-    </VerticalStackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1">
+                <Label Text="Live Scores" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
+                <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
+                    <BoxView Color="#ff3b30" WidthRequest="8" HeightRequest="8" CornerRadius="4" VerticalOptions="Center" />
+                    <Label Text="Live-Updates aktiv" TextColor="#ffdede" FontSize="12" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="14">
+
+                <!-- Football Card -->
+                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Fußball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="*, Auto" RowSpacing="8" RowDefinitions="Auto, Auto">
+                                <Label Text="Bayern München" TextColor="#DDDDDD" />
+                                <Label Text="2" TextColor="#FFFFFF" Grid.Column="1" HorizontalOptions="End" />
+
+                                <Label Text="Borussia Dortmund" TextColor="#DDDDDD" Grid.Row="1" />
+                                <Label Text="3" TextColor="#FFFFFF" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                            </Grid>
+
+                            <Label Text="67'" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Basketball Card -->
+                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Basketball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="*, Auto" RowSpacing="8" RowDefinitions="Auto, Auto">
+                                <Label Text="Lakers" TextColor="#DDDDDD" />
+                                <Label Text="99" TextColor="#FFFFFF" Grid.Column="1" HorizontalOptions="End" />
+
+                                <Label Text="Warriors" TextColor="#DDDDDD" Grid.Row="1" />
+                                <Label Text="104" TextColor="#FFFFFF" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                            </Grid>
+
+                            <Label Text="Q3 8:45" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Tennis Card -->
+                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Tennis" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="*, Auto" RowSpacing="8" RowDefinitions="Auto, Auto">
+                                <Label Text="Nadal, R." TextColor="#DDDDDD" />
+                                <Label Text="3" TextColor="#FFFFFF" Grid.Column="1" HorizontalOptions="End" />
+
+                                <Label Text="Djokovic, N." TextColor="#DDDDDD" Grid.Row="1" />
+                                <Label Text="4" TextColor="#FFFFFF" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                            </Grid>
+
+                            <Label Text="" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Spacer at bottom to account for nav bar -->
+                <BoxView HeightRequest="56" Color="Transparent" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
 
 </ContentPage>
