@@ -6,32 +6,37 @@
        Shell.FlyoutBehavior="Disabled"
        Shell.NavBarIsVisible="False"
        Shell.TabBarBackgroundColor="#8B1C23"
-       Shell.TabBarForegroundColor="#FFFFFF"
+       Shell.TabBarForegroundColor="Red"
        Shell.TabBarUnselectedColor="#FFDADA">
 
     <TabBar>
         <!-- Live Scores -->
         <ShellContent Title="Live"
+                      Icon="home.svg"
                       ContentTemplate="{DataTemplate local:MainPage}"
                       Route="main" />
 
         <!-- Favorites -->
         <ShellContent Title="Favoriten"
+                      Icon="star.svg"
                       ContentTemplate="{DataTemplate local:FavoritesPage}"
                       Route="favorites" />
 
         <!-- Statistics -->
         <ShellContent Title="Statistik"
+                      Icon="stats.svg"
                       ContentTemplate="{DataTemplate local:StatsPage}"
                       Route="stats" />
 
         <!-- Profile -->
         <ShellContent Title="Profil"
+                      Icon="user.svg"
                       ContentTemplate="{DataTemplate local:ProfilePage}"
                       Route="profile" />
 
         <!-- Info -->
         <ShellContent Title="Info"
+                      Icon="info.svg"
                       ContentTemplate="{DataTemplate local:InfoPage}"
                       Route="info" />
     </TabBar>
