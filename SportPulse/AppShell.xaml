@@ -4,9 +4,9 @@
        xmlns:local="clr-namespace:SportPulse.Views"
        x:Class="SportPulse.AppShell"
        Shell.FlyoutBehavior="Disabled"
-       Shell.TabBarBackgroundColor="#2B2B2B"
+       Shell.TabBarBackgroundColor="#8B1C23"
        Shell.TabBarForegroundColor="#FFFFFF"
-       Shell.TabBarUnselectedColor="#999999">
+       Shell.TabBarUnselectedColor="#FFDADA">
 
     <TabBar>
         <!-- Live Scores -->
