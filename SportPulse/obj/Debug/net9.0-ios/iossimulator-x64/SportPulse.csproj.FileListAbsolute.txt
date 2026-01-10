@@ -306,3 +306,4 @@ C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimu
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\SportPulse.pdb
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\SportPulse.genruntimeconfig.cache
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\ref\SportPulse.dll
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\icon.png

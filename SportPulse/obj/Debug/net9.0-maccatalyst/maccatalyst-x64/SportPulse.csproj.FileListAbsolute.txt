@@ -295,3 +295,4 @@ C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\SportPulse.pdb
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\SportPulse.genruntimeconfig.cache
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\SportPulse.dll
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\icon.png

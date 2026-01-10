@@ -2,25 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportPulse.Views.FavoritesPage"
-             BackgroundColor="#2B2B2B">
+             BackgroundColor="#2B2B2B"
+             Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="Auto, *" ColumnDefinitions="*">
 
         <!-- Header / AppBar -->
-        <Grid BackgroundColor="#8B1C23" Padding="12,18" ColumnDefinitions="Auto, *" Row="0">
-            <!-- App icon placeholder -->
-            <Frame Padding="6" HeightRequest="32" WidthRequest="32" BackgroundColor="#ffffff22" CornerRadius="6" VerticalOptions="Center" HasShadow="False">
-                <Label Text="SP" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" />
+        <Grid x:Name="HeaderGrid" BackgroundColor="#880A21" Padding="0" ColumnDefinitions="Auto, *" Row="0" HeightRequest="56">
+            <Frame Padding="0" HasShadow="False" CornerRadius="6"
+                   BackgroundColor="#ffffff22"
+                   VerticalOptions="Fill" HorizontalOptions="Start"
+                   HeightRequest="{Binding Source={x:Reference HeaderGrid}, Path=Height}">
+                <Image Source="icon.png" Aspect="AspectFit" 
+                       HeightRequest="{Binding Source={x:Reference HeaderGrid}, Path=Height}"
+                       VerticalOptions="Fill" HorizontalOptions="Start"/>
             </Frame>
 
-            <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1">
+            <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1" Padding="12,18,12,18">
                 <Label Text="Favoriten" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
                 <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
                 </StackLayout>
             </StackLayout>
         </Grid>
 
-        
 
     </Grid>
 
