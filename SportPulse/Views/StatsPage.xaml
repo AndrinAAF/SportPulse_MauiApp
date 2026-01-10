@@ -19,12 +19,84 @@
             </Frame>
 
             <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1" Padding="12,18,12,18">
-                <Label Text="Statistiken" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
+                <Label Text="Statistiken &amp; Tabellen" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
                 <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
                 </StackLayout>
             </StackLayout>
         </Grid>
 
+        <!-- Content Area -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="16" Spacing="16">
+                
+                <!-- Sport Selection Tabs -->
+                <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
+                    <Button x:Name="BundesligaBtn" 
+                            Text="Bundesliga" 
+                            BackgroundColor="#880A21" 
+                            TextColor="White"
+                            CornerRadius="6"
+                            HeightRequest="40"
+                            Clicked="OnBundesligaClicked"
+                            Grid.Column="0"/>
+                    <Button x:Name="NbaBtn" 
+                            Text="NBA" 
+                            BackgroundColor="#3B3B3B" 
+                            TextColor="White"
+                            CornerRadius="6"
+                            HeightRequest="40"
+                            Clicked="OnNbaClicked"
+                            Grid.Column="1"/>
+                    <Button x:Name="TopLigaBtn" 
+                            Text="TopLiga" 
+                            BackgroundColor="#3B3B3B" 
+                            TextColor="White"
+                            CornerRadius="6"
+                            HeightRequest="40"
+                            Clicked="OnTopLigaClicked"
+                            Grid.Column="2"/>
+                    <Button x:Name="F1Btn" 
+                            Text="F1" 
+                            BackgroundColor="#3B3B3B" 
+                            TextColor="White"
+                            CornerRadius="6"
+                            HeightRequest="40"
+                            Clicked="OnF1Clicked"
+                            Grid.Column="3"/>
+                </Grid>
+
+                <!-- League Title -->
+                <Frame BackgroundColor="#880A21" 
+                       CornerRadius="8" 
+                       Padding="12"
+                       HasShadow="False">
+                    <Label x:Name="LeagueTitleLabel" 
+                           Text="⚽ Bundesliga Tabelle 24/25" 
+                           TextColor="White" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+                </Frame>
+
+                <!-- Table Header -->
+                <Grid ColumnDefinitions="40,*,35,35,35,40,40" 
+                      Padding="8,0" 
+                      ColumnSpacing="4">
+                    <Label Text="#" TextColor="#999" FontSize="12" Grid.Column="0"/>
+                    <Label x:Name="TeamHeaderLabel" Text="Team" TextColor="#999" FontSize="12" Grid.Column="1"/>
+                    <Label Text="Sp" TextColor="#999" FontSize="12" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                    <Label Text="S" TextColor="#999" FontSize="12" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                    <Label Text="U" TextColor="#999" FontSize="12" Grid.Column="4" HorizontalTextAlignment="Center"/>
+                    <Label Text="N" TextColor="#999" FontSize="12" Grid.Column="5" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="GoalsHeaderLabel" Text="Tore" TextColor="#999" FontSize="12" Grid.Column="6" HorizontalTextAlignment="Center"/>
+                </Grid>
+
+                <!-- Table Content -->
+                <StackLayout x:Name="TableContent" Spacing="1">
+                    <!-- Team Rows will be populated here -->
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
 
     </Grid>
 

@@ -30,11 +30,68 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="14">
 
-                <!-- Football Card -->
-                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                <!-- Filter Buttons -->
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <HorizontalStackLayout Spacing="8">
+                        <Button x:Name="AllBtn" 
+                                Text="Alle" 
+                                BackgroundColor="#880A21" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                        <Button x:Name="FootballBtn" 
+                                Text="Fussball" 
+                                BackgroundColor="#3B3B3B" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                        <Button x:Name="BasketballBtn" 
+                                Text="Basketball" 
+                                BackgroundColor="#3B3B3B" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                        <Button x:Name="TennisBtn" 
+                                Text="Tennis" 
+                                BackgroundColor="#3B3B3B" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                        <Button x:Name="F1Btn" 
+                                Text="F1" 
+                                BackgroundColor="#3B3B3B" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                        <Button x:Name="WecBtn" 
+                                Text="WEC" 
+                                BackgroundColor="#3B3B3B" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="16,8"
+                                Clicked="OnFilterClicked"
+                                FontSize="14"/>
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <!-- Sports Cards Container -->
+                <VerticalStackLayout x:Name="SportsContainer" Spacing="14">
+
+                <!-- Football Card 1 -->
+                <Frame x:Name="FootballCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
-                            <Label Text="Fußball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Label Text="Fussball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
                             <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
                                 <Label Text="LIVE" TextColor="White" FontSize="12" />
                             </Frame>
@@ -55,7 +112,7 @@
                 </Frame>
 
                 <!-- Basketball Card -->
-                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                <Frame x:Name="BasketballCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
                             <Label Text="Basketball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
@@ -79,7 +136,7 @@
                 </Frame>
 
                 <!-- Tennis Card -->
-                <Frame CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                <Frame x:Name="TennisCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
                             <Label Text="Tennis" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
@@ -101,6 +158,116 @@
                         </StackLayout>
                     </VerticalStackLayout>
                 </Frame>
+
+                <!-- Football Card 2 -->
+                <Frame x:Name="FootballCard2" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Fussball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="*, Auto" RowSpacing="8" RowDefinitions="Auto, Auto">
+                                <Label Text="Real Madrid" TextColor="#DDDDDD" />
+                                <Label Text="1" TextColor="#FFFFFF" Grid.Column="1" HorizontalOptions="End" />
+
+                                <Label Text="FC Barcelona" TextColor="#DDDDDD" Grid.Row="1" />
+                                <Label Text="1" TextColor="#FFFFFF" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                            </Grid>
+
+                            <Label Text="45' + 2" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Basketball Card 2 -->
+                <Frame x:Name="BasketballCard2" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Basketball" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="*, Auto" RowSpacing="8" RowDefinitions="Auto, Auto">
+                                <Label Text="Celtics" TextColor="#DDDDDD" />
+                                <Label Text="87" TextColor="#FFFFFF" Grid.Column="1" HorizontalOptions="End" />
+
+                                <Label Text="Heat" TextColor="#DDDDDD" Grid.Row="1" />
+                                <Label Text="82" TextColor="#FFFFFF" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                            </Grid>
+
+                            <Label Text="Q4 3:21" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- F1 Card -->
+                <Frame x:Name="F1Card1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Formel 1" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="8" RowSpacing="6" RowDefinitions="Auto, Auto, Auto">
+                                <Label Text="1" TextColor="#FFD700" FontAttributes="Bold" Grid.Column="0" />
+                                <Label Text="M. Verstappen" TextColor="#DDDDDD" Grid.Column="1" />
+                                <Label Text="Runde 42/58" TextColor="#999999" Grid.Column="2" />
+
+                                <Label Text="2" TextColor="#C0C0C0" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="L. Hamilton" TextColor="#DDDDDD" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="+2.3s" TextColor="#999999" Grid.Row="1" Grid.Column="2" />
+
+                                <Label Text="3" TextColor="#CD7F32" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" />
+                                <Label Text="C. Leclerc" TextColor="#DDDDDD" Grid.Row="2" Grid.Column="1" />
+                                <Label Text="+5.8s" TextColor="#999999" Grid.Row="2" Grid.Column="2" />
+                            </Grid>
+
+                            <Label Text="🏁 Bahrain GP" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- WEC Card -->
+                <Frame x:Name="WecCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="WEC" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#ff3b30" Padding="6,2" CornerRadius="12" HorizontalOptions="End" HasShadow="False">
+                                <Label Text="LIVE" TextColor="White" FontSize="12" />
+                            </Frame>
+                        </Grid>
+
+                        <StackLayout Spacing="6">
+                            <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="8" RowSpacing="6" RowDefinitions="Auto, Auto, Auto">
+                                <Label Text="1" TextColor="#FFD700" FontAttributes="Bold" Grid.Column="0" />
+                                <Label Text="#8 Toyota GR010" TextColor="#DDDDDD" Grid.Column="1" />
+                                <Label Text="234 Runden" TextColor="#999999" Grid.Column="2" />
+
+                                <Label Text="2" TextColor="#C0C0C0" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="#7 Toyota GR010" TextColor="#DDDDDD" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="234 Runden" TextColor="#999999" Grid.Row="1" Grid.Column="2" />
+
+                                <Label Text="3" TextColor="#CD7F32" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" />
+                                <Label Text="#51 Ferrari 499P" TextColor="#DDDDDD" Grid.Row="2" Grid.Column="1" />
+                                <Label Text="232 Runden" TextColor="#999999" Grid.Row="2" Grid.Column="2" />
+                            </Grid>
+
+                            <Label Text="🏁 6h of Spa - 2h 15m remaining" TextColor="#999999" FontSize="12" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                </VerticalStackLayout>
 
                 <!-- Spacer at bottom to account for nav bar -->
                 <BoxView HeightRequest="56" Color="Transparent" />
