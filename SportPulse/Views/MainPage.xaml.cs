@@ -27,7 +27,12 @@ public partial class MainPage : ContentPage
             try
             {
                 var favorites = favoritesJson.Split(',');
-                _favoriteSports = new HashSet<string>(favorites);
+                _favoriteSports = new HashSet<string>();
+                foreach (var fav in favorites)
+                {
+                    if (!string.IsNullOrEmpty(fav))
+                        _favoriteSports.Add(fav);
+                }
             }
             catch
             {

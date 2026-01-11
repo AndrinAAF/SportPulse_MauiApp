@@ -75,29 +75,39 @@
                                      Spacing="16" 
                                      IsVisible="False">
                     
-                    <!-- User Info Card -->
-                    <Frame BackgroundColor="#3B3B3B" 
-                           CornerRadius="8" 
-                           Padding="16"
-                           HasShadow="False">
-                        <HorizontalStackLayout Spacing="12">
-                            <Label Text="⭐" FontSize="24" VerticalOptions="Center"/>
-                            <VerticalStackLayout Spacing="4" VerticalOptions="Center">
-                                <Label Text="Deine Lieblingssportart" 
-                                       TextColor="#999999" 
-                                       FontSize="12"/>
-                                <Label x:Name="FavoriteSportLabel" 
-                                       Text="Fussball" 
-                                       TextColor="White" 
-                                       FontSize="18"
-                                       FontAttributes="Bold"/>
-                            </VerticalStackLayout>
-                        </HorizontalStackLayout>
-                    </Frame>
+                    <!-- Meine Favoriten Header with Add Button -->
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,8,0,0">
+                        <Label Text="Meine Favoriten" 
+                               TextColor="White" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
+                        <Button Text="+ Hinzufügen" 
+                                BackgroundColor="#880A21" 
+                                TextColor="White"
+                                CornerRadius="16"
+                                Padding="12,6"
+                                FontSize="13"
+                                Clicked="OnAddFavoriteClicked"
+                                Grid.Column="1"/>
+                    </Grid>
 
                     <!-- Favorites Content -->
-                    <VerticalStackLayout x:Name="FavoritesContent" Spacing="14">
+                    <VerticalStackLayout x:Name="FavoritesContent" Spacing="12">
                         <!-- Favorite items will be populated here -->
+                    </VerticalStackLayout>
+
+                    <!-- Personalisierte Ergebnisse Header -->
+                    <Label Text="Personalisierte Ergebnisse" 
+                           TextColor="White" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           Margin="0,16,0,0"/>
+
+                    <!-- Personalized Results Content -->
+                    <VerticalStackLayout x:Name="PersonalizedContent" Spacing="12">
+                        <!-- Personalized items will be populated here -->
                     </VerticalStackLayout>
 
                     <!-- Empty State (when no favorites) -->

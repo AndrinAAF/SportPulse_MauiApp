@@ -26,7 +26,6 @@ public partial class ProfilePage : ContentPage
         // Prüfe ob Benutzerdaten gespeichert sind
         var name = Preferences.Get("user_name", string.Empty);
         var email = Preferences.Get("user_email", string.Empty);
-        var sport = Preferences.Get("user_sport", string.Empty);
         var notifications = Preferences.Get("user_notifications", false);
         var favoriteSportsJson = Preferences.Get("favorite_sports", string.Empty);
 
@@ -40,10 +39,9 @@ public partial class ProfilePage : ContentPage
 
             ProfileName.Text = name;
             ProfileEmail.Text = email;
-            ProfileSport.Text = sport;
             ProfileNotificationSwitch.IsToggled = notifications;
             
-            // Zeige Favoriten-Sportarten
+            // Zeige nur noch Favoriten
             if (!string.IsNullOrEmpty(favoriteSportsJson))
             {
                 var favorites = favoriteSportsJson.Split(',');
@@ -132,8 +130,27 @@ public partial class ProfilePage : ContentPage
 
         Preferences.Set("user_name", name);
         Preferences.Set("user_email", email);
-        Preferences.Set("user_sport", sport);
         Preferences.Set("user_notifications", notifications);
+        
+        // Füge ausgewählte Sportart zu Favoriten hinzu
+        var favoriteSportsJson = Preferences.Get("favorite_sports", string.Empty);
+        var favoriteSports = new HashSet<string>();
+        
+        if (!string.IsNullOrEmpty(favoriteSportsJson))
+        {
+            var existing = favoriteSportsJson.Split(',');
+            foreach (var s in existing)
+            {
+                if (!string.IsNullOrEmpty(s))
+                    favoriteSports.Add(s);
+            }
+        }
+        
+        // Füge die ausgewählte Sportart hinzu
+        favoriteSports.Add(sport);
+        
+        // Speichere aktualisierte Favoriten
+        Preferences.Set("favorite_sports", string.Join(",", favoriteSports));
 
         _isLoggedIn = true;
 
