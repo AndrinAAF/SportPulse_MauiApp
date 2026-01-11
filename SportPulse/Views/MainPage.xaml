@@ -33,6 +33,7 @@
                 <!-- Filter Buttons -->
                 <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                     <HorizontalStackLayout Spacing="8">
+                        <!-- Alle Button -->
                         <Button x:Name="AllBtn" 
                                 Text="Alle" 
                                 BackgroundColor="#880A21" 
@@ -41,46 +42,156 @@
                                 Padding="16,8"
                                 Clicked="OnFilterClicked"
                                 FontSize="14"/>
-                        <Button x:Name="FootballBtn" 
-                                Text="Fussball" 
-                                BackgroundColor="#3B3B3B" 
-                                TextColor="White"
-                                CornerRadius="16"
-                                Padding="16,8"
-                                Clicked="OnFilterClicked"
-                                FontSize="14"/>
-                        <Button x:Name="BasketballBtn" 
-                                Text="Basketball" 
-                                BackgroundColor="#3B3B3B" 
-                                TextColor="White"
-                                CornerRadius="16"
-                                Padding="16,8"
-                                Clicked="OnFilterClicked"
-                                FontSize="14"/>
-                        <Button x:Name="TennisBtn" 
-                                Text="Tennis" 
-                                BackgroundColor="#3B3B3B" 
-                                TextColor="White"
-                                CornerRadius="16"
-                                Padding="16,8"
-                                Clicked="OnFilterClicked"
-                                FontSize="14"/>
-                        <Button x:Name="F1Btn" 
-                                Text="F1" 
-                                BackgroundColor="#3B3B3B" 
-                                TextColor="White"
-                                CornerRadius="16"
-                                Padding="16,8"
-                                Clicked="OnFilterClicked"
-                                FontSize="14"/>
-                        <Button x:Name="WecBtn" 
-                                Text="WEC" 
-                                BackgroundColor="#3B3B3B" 
-                                TextColor="White"
-                                CornerRadius="16"
-                                Padding="16,8"
-                                Clicked="OnFilterClicked"
-                                FontSize="14"/>
+                        
+                        <!-- Fussball Button with Star -->
+                        <Frame BackgroundColor="#3B3B3B" 
+                               CornerRadius="16" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto">
+                                <Label Text="Fussball" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="16,8,4,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFilterLabelClicked" CommandParameter="Fussball"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label x:Name="FootballStar" 
+                                       Text="☆" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="4,8,16,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="Fussball"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                        
+                        <!-- Basketball Button with Star -->
+                        <Frame BackgroundColor="#3B3B3B" 
+                               CornerRadius="16" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto">
+                                <Label Text="Basketball" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="16,8,4,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFilterLabelClicked" CommandParameter="Basketball"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label x:Name="BasketballStar" 
+                                       Text="☆" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="4,8,16,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="Basketball"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                        
+                        <!-- Tennis Button with Star -->
+                        <Frame BackgroundColor="#3B3B3B" 
+                               CornerRadius="16" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto">
+                                <Label Text="Tennis" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="16,8,4,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFilterLabelClicked" CommandParameter="Tennis"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label x:Name="TennisStar" 
+                                       Text="☆" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="4,8,16,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="Tennis"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                        
+                        <!-- F1 Button with Star -->
+                        <Frame BackgroundColor="#3B3B3B" 
+                               CornerRadius="16" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto">
+                                <Label Text="F1" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="16,8,4,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFilterLabelClicked" CommandParameter="F1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label x:Name="F1Star" 
+                                       Text="☆" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="4,8,16,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="F1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                        
+                        <!-- WEC Button with Star -->
+                        <Frame BackgroundColor="#3B3B3B" 
+                               CornerRadius="16" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto">
+                                <Label Text="WEC" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="16,8,4,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFilterLabelClicked" CommandParameter="WEC"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label x:Name="WecStar" 
+                                       Text="☆" 
+                                       TextColor="White" 
+                                       FontSize="14"
+                                       Padding="4,8,16,8"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="WEC"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
                     </HorizontalStackLayout>
                 </ScrollView>
 

@@ -1,4 +1,6 @@
-﻿namespace SportPulse.Views;
+﻿using System.Linq;
+
+namespace SportPulse.Views;
 
 public partial class FavoritesPage : ContentPage
 {
@@ -36,9 +38,44 @@ public partial class FavoritesPage : ContentPage
             // Setze Lieblingssportart
             FavoriteSportLabel.Text = userSport;
             
-            // Lade Favoriten basierend auf Sportart
-            LoadFavoritesForSport(userSport);
+            // Lade Favoriten-Sportarten aus MainPage
+            var favoriteSportsJson = Preferences.Get("favorite_sports", string.Empty);
+            var favoriteSports = new List<string>();
+            
+            if (!string.IsNullOrEmpty(favoriteSportsJson))
+            {
+                favoriteSports = favoriteSportsJson.Split(',').ToList();
+            }
+            
+            // Wenn keine Favoriten-Sportarten, zeige nur Lieblingssportart
+            if (favoriteSports.Count == 0 && !string.IsNullOrEmpty(userSport))
+            {
+                LoadFavoritesForSport(userSport);
+            }
+            else
+            {
+                // Lade Favoriten für alle markierten Sportarten
+                LoadFavoritesForMultipleSports(favoriteSports);
+            }
         }
+    }
+
+    private void LoadFavoritesForMultipleSports(List<string> sports)
+    {
+        FavoritesContent.Children.Clear();
+        
+        if (sports.Count == 0)
+        {
+            EmptyFavoritesView.IsVisible = true;
+            return;
+        }
+        
+        foreach (var sport in sports)
+        {
+            LoadFavoritesForSport(sport);
+        }
+        
+        EmptyFavoritesView.IsVisible = FavoritesContent.Children.Count == 0;
     }
 
     private void LoadFavoritesForSport(string sport)
@@ -81,19 +118,7 @@ public partial class FavoritesPage : ContentPage
                 break;
                 
             default:
-                // Zeige leere Favoriten-Ansicht
-                EmptyFavoritesView.IsVisible = true;
                 break;
-        }
-
-        // Wenn keine Favoriten, zeige Empty State
-        if (FavoritesContent.Children.Count == 0)
-        {
-            EmptyFavoritesView.IsVisible = true;
-        }
-        else
-        {
-            EmptyFavoritesView.IsVisible = false;
         }
     }
 

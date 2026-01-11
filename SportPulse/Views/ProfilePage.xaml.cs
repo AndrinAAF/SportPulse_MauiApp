@@ -28,6 +28,7 @@ public partial class ProfilePage : ContentPage
         var email = Preferences.Get("user_email", string.Empty);
         var sport = Preferences.Get("user_sport", string.Empty);
         var notifications = Preferences.Get("user_notifications", false);
+        var favoriteSportsJson = Preferences.Get("favorite_sports", string.Empty);
 
         _isLoggedIn = !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email);
 
@@ -41,6 +42,17 @@ public partial class ProfilePage : ContentPage
             ProfileEmail.Text = email;
             ProfileSport.Text = sport;
             ProfileNotificationSwitch.IsToggled = notifications;
+            
+            // Zeige Favoriten-Sportarten
+            if (!string.IsNullOrEmpty(favoriteSportsJson))
+            {
+                var favorites = favoriteSportsJson.Split(',');
+                ProfileFavorites.Text = string.Join(", ", favorites);
+            }
+            else
+            {
+                ProfileFavorites.Text = "Keine Favoriten ausgewählt";
+            }
         }
         else
         {

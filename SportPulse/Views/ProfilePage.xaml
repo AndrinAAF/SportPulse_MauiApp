@@ -179,6 +179,22 @@
                                            FontSize="16"/>
                                 </VerticalStackLayout>
                             </HorizontalStackLayout>
+                            
+                            <BoxView HeightRequest="1" Color="#555555"/>
+                            
+                            <HorizontalStackLayout Spacing="8">
+                                <Label Text="⭐" FontSize="20"/>
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="Favoriten" 
+                                           TextColor="#999999" 
+                                           FontSize="12"/>
+                                    <Label x:Name="ProfileFavorites" 
+                                           Text="Keine Favoriten ausgewählt" 
+                                           TextColor="White" 
+                                           FontSize="14"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </Frame>
 
