@@ -133,14 +133,6 @@
                             FontAttributes="Bold"
                             Margin="0,8,0,0"
                             Clicked="OnSaveClicked"/>
-
-                    <!-- Password Reset Link -->
-                    <Label Text="• Passwörter müssen sorgfältig verwaltet werden" 
-                           TextColor="#999999" 
-                           FontSize="12"
-                           HorizontalOptions="Start"
-                           Margin="0,16,0,0"/>
-
                 </VerticalStackLayout>
 
                 <!-- Profile View (shown when logged in) -->

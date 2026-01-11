@@ -311,3 +311,4 @@ C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\stats@3x.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\stats@2x.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\stats.png
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\icon_square.png

@@ -322,3 +322,4 @@ C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimu
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\info@3x.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\info@2x.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\info.png
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\icon_square.png

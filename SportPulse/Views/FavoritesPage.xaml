@@ -25,6 +25,116 @@
             </StackLayout>
         </Grid>
 
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <!-- Not Logged In View -->
+                <VerticalStackLayout x:Name="NotLoggedInView" 
+                                     Spacing="24" 
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     Padding="32"
+                                     IsVisible="True">
+                    
+                    <Label Text="🔒" 
+                           FontSize="64" 
+                           HorizontalOptions="Center"/>
+                    
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Anmeldung erforderlich" 
+                               TextColor="White" 
+                               FontSize="24" 
+                               FontAttributes="Bold" 
+                               HorizontalOptions="Center"/>
+                        
+                        <Label Text="Um Favoriten zu speichern und anzuzeigen, musst du dich zuerst anmelden." 
+                               TextColor="#CCCCCC" 
+                               FontSize="15" 
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,8,0,0"
+                               LineHeight="1.4"/>
+                    </VerticalStackLayout>
+                    
+                    <Button Text="Jetzt anmelden" 
+                            BackgroundColor="#880A21" 
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="50"
+                            WidthRequest="200"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            Clicked="OnLoginButtonClicked"
+                            HorizontalOptions="Center"/>
+                    
+                </VerticalStackLayout>
+
+                <!-- Logged In View - Favorites -->
+                <VerticalStackLayout x:Name="LoggedInView" 
+                                     Spacing="16" 
+                                     IsVisible="False">
+                    
+                    <!-- User Info Card -->
+                    <Frame BackgroundColor="#3B3B3B" 
+                           CornerRadius="8" 
+                           Padding="16"
+                           HasShadow="False">
+                        <HorizontalStackLayout Spacing="12">
+                            <Label Text="⭐" FontSize="24" VerticalOptions="Center"/>
+                            <VerticalStackLayout Spacing="4" VerticalOptions="Center">
+                                <Label Text="Deine Lieblingssportart" 
+                                       TextColor="#999999" 
+                                       FontSize="12"/>
+                                <Label x:Name="FavoriteSportLabel" 
+                                       Text="Fussball" 
+                                       TextColor="White" 
+                                       FontSize="18"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+
+                    <!-- Favorites Content -->
+                    <VerticalStackLayout x:Name="FavoritesContent" Spacing="14">
+                        <!-- Favorite items will be populated here -->
+                    </VerticalStackLayout>
+
+                    <!-- Empty State (when no favorites) -->
+                    <VerticalStackLayout x:Name="EmptyFavoritesView" 
+                                         Spacing="16" 
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="Center"
+                                         Padding="32"
+                                         Margin="0,32,0,0"
+                                         IsVisible="False">
+                        
+                        <Label Text="📋" 
+                               FontSize="48" 
+                               HorizontalOptions="Center"/>
+                        
+                        <Label Text="Noch keine Favoriten" 
+                               TextColor="White" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               HorizontalOptions="Center"/>
+                        
+                        <Label Text="Gehe zur Live-Seite und markiere Spiele oder Teams als Favoriten." 
+                               TextColor="#CCCCCC" 
+                               FontSize="14" 
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineHeight="1.4"/>
+                        
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+                <!-- Spacer for nav bar -->
+                <BoxView HeightRequest="56" Color="Transparent"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
 
     </Grid>
 

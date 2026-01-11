@@ -566,3 +566,5 @@ C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-windows10.0
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\star.scale-150.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\star.scale-125.png
 C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\star.scale-100.png
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\icon_square.scale-100.png
+C:\Users\andrin\RiderProjects\SportPulse\SportPulse\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_square.scale-100.png
