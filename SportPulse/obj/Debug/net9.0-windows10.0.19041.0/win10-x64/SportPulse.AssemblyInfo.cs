@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SportPulse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+657875f64832c8d5458b4cd6bc972a7be48c6cb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1899058c12ac24c239d45576e51c8a1c133b8159")]
 [assembly: System.Reflection.AssemblyProductAttribute("SportPulse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SportPulse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

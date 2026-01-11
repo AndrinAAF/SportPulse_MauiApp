@@ -6,7 +6,7 @@
        Shell.FlyoutBehavior="Disabled"
        Shell.NavBarIsVisible="False"
        Shell.TabBarBackgroundColor="#8B1C23"
-       Shell.TabBarForegroundColor="Red"
+       Shell.TabBarForegroundColor="#FE002A"
        Shell.TabBarUnselectedColor="#FFDADA">
 
     <TabBar>

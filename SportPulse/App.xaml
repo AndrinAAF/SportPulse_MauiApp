@@ -4,7 +4,6 @@
              x:Class="SportPulse.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!-- SportPulse Colors -->
             <Color x:Key="PrimaryRed">#B8121C</Color>
             <Color x:Key="DarkBackground">#2B2B2B</Color>
             <Color x:Key="CardBackground">#3A3A3A</Color>

@@ -28,8 +28,7 @@
         <!-- Content -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="16">
-
-                <!-- Not Logged In View -->
+                
                 <VerticalStackLayout x:Name="NotLoggedInView" 
                                      Spacing="24" 
                                      VerticalOptions="Center"
@@ -69,13 +68,11 @@
                             HorizontalOptions="Center"/>
                     
                 </VerticalStackLayout>
-
-                <!-- Logged In View - Favorites -->
+                
                 <VerticalStackLayout x:Name="LoggedInView" 
                                      Spacing="16" 
                                      IsVisible="False">
                     
-                    <!-- Meine Favoriten Header with Add Button -->
                     <Grid ColumnDefinitions="*,Auto" Margin="0,8,0,0">
                         <Label Text="Meine Favoriten" 
                                TextColor="White" 
@@ -92,25 +89,19 @@
                                 Clicked="OnAddFavoriteClicked"
                                 Grid.Column="1"/>
                     </Grid>
-
-                    <!-- Favorites Content -->
+                    
                     <VerticalStackLayout x:Name="FavoritesContent" Spacing="12">
-                        <!-- Favorite items will be populated here -->
                     </VerticalStackLayout>
-
-                    <!-- Personalisierte Ergebnisse Header -->
+                    
                     <Label Text="Personalisierte Ergebnisse" 
                            TextColor="White" 
                            FontSize="18" 
                            FontAttributes="Bold"
                            Margin="0,16,0,0"/>
-
-                    <!-- Personalized Results Content -->
+                    
                     <VerticalStackLayout x:Name="PersonalizedContent" Spacing="12">
-                        <!-- Personalized items will be populated here -->
                     </VerticalStackLayout>
-
-                    <!-- Empty State (when no favorites) -->
+                    
                     <VerticalStackLayout x:Name="EmptyFavoritesView" 
                                          Spacing="16" 
                                          VerticalOptions="Center"
@@ -139,8 +130,7 @@
                     </VerticalStackLayout>
 
                 </VerticalStackLayout>
-
-                <!-- Spacer for nav bar -->
+                
                 <BoxView HeightRequest="56" Color="Transparent"/>
 
             </VerticalStackLayout>

@@ -142,8 +142,7 @@ public partial class FavoritesPage : ContentPage
         };
 
         var mainStack = new VerticalStackLayout { Spacing = 4 };
-
-        // Team 1 / Event Name
+        
         var team1Label = new Label
         {
             Text = $"{emoji} {team1}",
@@ -152,8 +151,7 @@ public partial class FavoritesPage : ContentPage
             FontAttributes = FontAttributes.Bold
         };
         mainStack.Add(team1Label);
-
-        // Team 2 / vs (if exists)
+        
         if (!string.IsNullOrEmpty(team2))
         {
             var team2Label = new Label
@@ -164,8 +162,7 @@ public partial class FavoritesPage : ContentPage
             };
             mainStack.Add(team2Label);
         }
-
-        // Score (if exists)
+        
         if (!string.IsNullOrEmpty(score))
         {
             var scoreLabel = new Label
@@ -177,8 +174,7 @@ public partial class FavoritesPage : ContentPage
             };
             mainStack.Add(scoreLabel);
         }
-
-        // Time/Date
+        
         var timeLabel = new Label
         {
             Text = time,
@@ -208,23 +204,12 @@ public partial class FavoritesPage : ContentPage
         {
             ColumnDefinitions =
             {
-                new ColumnDefinition { Width = GridLength.Auto },
                 new ColumnDefinition { Width = GridLength.Star },
                 new ColumnDefinition { Width = GridLength.Auto }
             },
             ColumnSpacing = 12
         };
-
-        // Pin Icon
-        var pinLabel = new Label
-        {
-            Text = "📌",
-            FontSize = 18,
-            VerticalOptions = LayoutOptions.Center
-        };
-        grid.Add(pinLabel, 0);
-
-        // Sport Name
+        
         var sportLabel = new Label
         {
             Text = $"{emoji} {sportName}",
@@ -233,9 +218,8 @@ public partial class FavoritesPage : ContentPage
             FontAttributes = FontAttributes.Bold,
             VerticalOptions = LayoutOptions.Center
         };
-        grid.Add(sportLabel, 1);
-
-        // Remove Button (X)
+        grid.Add(sportLabel, 0);
+        
         var removeButton = new Label
         {
             Text = "✕",
@@ -247,7 +231,7 @@ public partial class FavoritesPage : ContentPage
         var tapGesture = new TapGestureRecognizer();
         tapGesture.Tapped += (s, e) => OnRemoveFavoriteClicked(sport);
         removeButton.GestureRecognizers.Add(tapGesture);
-        grid.Add(removeButton, 2);
+        grid.Add(removeButton, 1);
 
         frame.Content = grid;
         FavoritesContent.Children.Add(frame);
@@ -267,8 +251,7 @@ public partial class FavoritesPage : ContentPage
         };
 
         var mainStack = new VerticalStackLayout { Spacing = 4 };
-
-        // Sport Name
+        
         var sportLabel = new Label
         {
             Text = $"{emoji} {sportName}",
@@ -277,8 +260,7 @@ public partial class FavoritesPage : ContentPage
             FontAttributes = FontAttributes.Bold
         };
         mainStack.Add(sportLabel);
-
-        // Info text based on sport
+        
         var infoText = sport switch
         {
             "Fussball" => "Aktuelle Bundesliga Spiele",
@@ -344,7 +326,6 @@ public partial class FavoritesPage : ContentPage
 
     private async void OnLoginButtonClicked(object sender, EventArgs e)
     {
-        // Navigate zur ProfilePage
         await Shell.Current.GoToAsync("//profile");
     }
 }

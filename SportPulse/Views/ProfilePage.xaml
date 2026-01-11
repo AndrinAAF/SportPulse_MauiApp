@@ -19,7 +19,7 @@
             </Frame>
 
             <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Column="1" Padding="12,18,12,18">
-                <Label Text="Profile" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
+                <Label Text="Profil" TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
                 <StackLayout Orientation="Horizontal" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
                 </StackLayout>
             </StackLayout>
@@ -29,7 +29,6 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout x:Name="ContentLayout" Padding="16" Spacing="16">
 
-                <!-- Login/Register Form (shown when not logged in) -->
                 <VerticalStackLayout x:Name="LoginForm" Spacing="16" IsVisible="True">
                     
                     <Label Text="Profil &amp; Einstellungen" 
@@ -38,7 +37,6 @@
                            FontAttributes="Bold" 
                            Margin="0,8,0,16"/>
 
-                    <!-- Name Field -->
                     <VerticalStackLayout Spacing="4">
                         <Label Text="Name *" TextColor="#CCCCCC" FontSize="14"/>
                         <Entry x:Name="NameEntry" 
@@ -55,7 +53,6 @@
                                IsVisible="False"/>
                     </VerticalStackLayout>
 
-                    <!-- Email Field -->
                     <VerticalStackLayout Spacing="4">
                         <Label Text="Email *" TextColor="#CCCCCC" FontSize="14"/>
                         <Entry x:Name="EmailEntry" 
@@ -73,7 +70,6 @@
                                IsVisible="False"/>
                     </VerticalStackLayout>
 
-                    <!-- Favorite Sport Field -->
                     <VerticalStackLayout Spacing="4">
                         <Label Text="Bevorzugte Sportart *" TextColor="#CCCCCC" FontSize="14"/>
                         <Picker x:Name="SportPicker" 
@@ -99,7 +95,6 @@
                                IsVisible="False"/>
                     </VerticalStackLayout>
 
-                    <!-- Push Notifications Toggle -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -122,7 +117,6 @@
                            FontSize="12"
                            Margin="0,-8,0,0"/>
 
-                    <!-- Save Button -->
                     <Button x:Name="SaveButton"
                             Text="Profil speichern" 
                             BackgroundColor="#880A21" 
@@ -135,7 +129,6 @@
                             Clicked="OnSaveClicked"/>
                 </VerticalStackLayout>
 
-                <!-- Profile View (shown when logged in) -->
                 <VerticalStackLayout x:Name="ProfileView" Spacing="16" IsVisible="False">
                     
                     <Label Text="Profil" 
@@ -144,7 +137,6 @@
                            FontAttributes="Bold" 
                            Margin="0,8,0,16"/>
 
-                    <!-- Profile Info Card -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -183,7 +175,6 @@
                         </VerticalStackLayout>
                     </Frame>
 
-                    <!-- Push Notifications Toggle -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -200,7 +191,6 @@
                         </Grid>
                     </Frame>
 
-                    <!-- Logout Button -->
                     <Button Text="Abmelden" 
                             BackgroundColor="#FF3B30" 
                             TextColor="White"

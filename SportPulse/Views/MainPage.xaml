@@ -29,8 +29,7 @@
         <!-- Content -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="14">
-
-                <!-- Filter Buttons -->
+                
                 <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                     <HorizontalStackLayout Spacing="8">
                         <!-- Alle Button -->
@@ -43,7 +42,6 @@
                                 Clicked="OnFilterClicked"
                                 FontSize="14"/>
                         
-                        <!-- Fussball Button with Star -->
                         <Frame BackgroundColor="#3B3B3B" 
                                CornerRadius="16" 
                                Padding="0" 
@@ -72,8 +70,7 @@
                                 </Label>
                             </Grid>
                         </Frame>
-                        
-                        <!-- Basketball Button with Star -->
+
                         <Frame BackgroundColor="#3B3B3B" 
                                CornerRadius="16" 
                                Padding="0" 
@@ -102,8 +99,7 @@
                                 </Label>
                             </Grid>
                         </Frame>
-                        
-                        <!-- Tennis Button with Star -->
+
                         <Frame BackgroundColor="#3B3B3B" 
                                CornerRadius="16" 
                                Padding="0" 
@@ -132,8 +128,7 @@
                                 </Label>
                             </Grid>
                         </Frame>
-                        
-                        <!-- F1 Button with Star -->
+
                         <Frame BackgroundColor="#3B3B3B" 
                                CornerRadius="16" 
                                Padding="0" 
@@ -162,8 +157,7 @@
                                 </Label>
                             </Grid>
                         </Frame>
-                        
-                        <!-- WEC Button with Star -->
+
                         <Frame BackgroundColor="#3B3B3B" 
                                CornerRadius="16" 
                                Padding="0" 
@@ -195,10 +189,8 @@
                     </HorizontalStackLayout>
                 </ScrollView>
 
-                <!-- Sports Cards Container -->
                 <VerticalStackLayout x:Name="SportsContainer" Spacing="14">
 
-                <!-- Football Card 1 -->
                 <Frame x:Name="FootballCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -222,7 +214,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Basketball Card -->
                 <Frame x:Name="BasketballCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -246,7 +237,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Tennis Card -->
                 <Frame x:Name="TennisCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -270,7 +260,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Football Card 2 -->
                 <Frame x:Name="FootballCard2" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -294,7 +283,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Basketball Card 2 -->
                 <Frame x:Name="BasketballCard2" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -318,7 +306,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- F1 Card -->
                 <Frame x:Name="F1Card1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -348,7 +335,6 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- WEC Card -->
                 <Frame x:Name="WecCard1" CornerRadius="8" BackgroundColor="#1F1F1F" BorderColor="#3A3A3A" Padding="12" HasShadow="False">
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*, Auto">
@@ -380,7 +366,6 @@
 
                 </VerticalStackLayout>
 
-                <!-- Spacer at bottom to account for nav bar -->
                 <BoxView HeightRequest="56" Color="Transparent" />
 
             </VerticalStackLayout>

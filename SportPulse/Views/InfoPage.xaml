@@ -28,8 +28,7 @@
         <!-- Content -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="24">
-
-                <!-- Logo & Version Header -->
+                
                 <VerticalStackLayout Spacing="12" HorizontalOptions="Center" Margin="0,16,0,0">
                     <Frame WidthRequest="120" 
                            HeightRequest="120" 
@@ -57,8 +56,7 @@
                            FontSize="14" 
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
-
-                <!-- Über SportPulse -->
+                
                 <VerticalStackLayout Spacing="12">
                     <Label Text="Über SportPulse" 
                            TextColor="White" 
@@ -120,15 +118,13 @@
                         </VerticalStackLayout>
                     </Frame>
                 </VerticalStackLayout>
-
-                <!-- Features -->
+                
                 <VerticalStackLayout Spacing="12">
                     <Label Text="Features" 
                            TextColor="White" 
                            FontSize="20" 
                            FontAttributes="Bold"/>
                     
-                    <!-- Live-Ergebnisse -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -140,7 +136,7 @@
                                        TextColor="White" 
                                        FontSize="16" 
                                        FontAttributes="Bold"/>
-                                <Label Text="Aktuelle Resultate verschiedener Sportarten in Echtzeit abrufen" 
+                                <Label Text="Aktuelle Resultate in Echtzeit abrufen" 
                                        TextColor="#CCCCCC" 
                                        FontSize="13"
                                        LineHeight="1.3"/>
@@ -148,7 +144,6 @@
                         </HorizontalStackLayout>
                     </Frame>
                     
-                    <!-- Favoriten-System -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -160,7 +155,7 @@
                                        TextColor="White" 
                                        FontSize="16" 
                                        FontAttributes="Bold"/>
-                                <Label Text="Teams oder Sportarten als Favoriten markieren für schnelleren Zugriff" 
+                                <Label Text="Teams oder Sportarten als Favoriten markieren" 
                                        TextColor="#CCCCCC" 
                                        FontSize="13"
                                        LineHeight="1.3"/>
@@ -168,7 +163,6 @@
                         </HorizontalStackLayout>
                     </Frame>
                     
-                    <!-- Sportarten-Auswahl -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -188,7 +182,6 @@
                         </HorizontalStackLayout>
                     </Frame>
                     
-                    <!-- Push-Benachrichtigungen -->
                     <Frame BackgroundColor="#3B3B3B" 
                            CornerRadius="8" 
                            Padding="16"
@@ -200,7 +193,7 @@
                                        TextColor="White" 
                                        FontSize="16" 
                                        FontAttributes="Bold"/>
-                                <Label Text="Wichtige Spielereignisse wie Tore, Matchende per Notification" 
+                                <Label Text="Wichtige Spielereignisse wie Tore" 
                                        TextColor="#CCCCCC" 
                                        FontSize="13"
                                        LineHeight="1.3"/>
@@ -208,8 +201,7 @@
                         </HorizontalStackLayout>
                     </Frame>
                 </VerticalStackLayout>
-
-                <!-- Zielgruppe -->
+                
                 <VerticalStackLayout Spacing="12">
                     <Label Text="Zielgruppe" 
                            TextColor="White" 
@@ -248,7 +240,7 @@
                                 
                                 <HorizontalStackLayout Spacing="8">
                                     <Label Text="•" TextColor="#880A21" FontSize="16" FontAttributes="Bold"/>
-                                    <Label Text="Konsumieren Sportinhalte regelmäßig über digitale Medien" 
+                                    <Label Text="Konsumieren Sportinhalte über digitale Medien" 
                                            TextColor="#CCCCCC" 
                                            FontSize="14"/>
                                 </HorizontalStackLayout>
@@ -256,8 +248,7 @@
                         </VerticalStackLayout>
                     </Frame>
                 </VerticalStackLayout>
-
-                <!-- Kontakt & Support -->
+                
                 <VerticalStackLayout Spacing="12">
                     <Label Text="Kontakt &amp; Support" 
                            TextColor="White" 
@@ -289,7 +280,6 @@
                             
                             <BoxView HeightRequest="1" Color="#555555"/>
                             
-                            <!-- Website -->
                             <HorizontalStackLayout Spacing="12">
                                 <Label Text="🌐" FontSize="24" VerticalOptions="Center"/>
                                 <VerticalStackLayout Spacing="2" VerticalOptions="Center">
@@ -309,7 +299,6 @@
                             
                             <BoxView HeightRequest="1" Color="#555555"/>
                             
-                            <!-- Firma -->
                             <HorizontalStackLayout Spacing="12">
                                 <Label Text="🏢" FontSize="24" VerticalOptions="Center"/>
                                 <VerticalStackLayout Spacing="2" VerticalOptions="Center">
@@ -324,7 +313,6 @@
                             
                             <BoxView HeightRequest="1" Color="#555555"/>
                             
-                            <!-- Social Media -->
                             <HorizontalStackLayout Spacing="12">
                                 <Label Text="📱" FontSize="24" VerticalOptions="Center"/>
                                 <VerticalStackLayout Spacing="2" VerticalOptions="Center">
@@ -344,8 +332,7 @@
                         </VerticalStackLayout>
                     </Frame>
                 </VerticalStackLayout>
-
-                <!-- Footer Info -->
+                
                 <VerticalStackLayout Spacing="8" Margin="0,8,0,16">
                     <Label Text="© 2025 Smash Bros GmbH. Alle Rechte vorbehalten." 
                            TextColor="#666666" 
@@ -356,8 +343,7 @@
                            FontSize="12" 
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
-
-                <!-- Spacer for nav bar -->
+                
                 <BoxView HeightRequest="56" Color="Transparent"/>
 
             </VerticalStackLayout>
